@@ -1,0 +1,141 @@
+* {
+    background: #eeefef;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardRegist {
+    background: #ffffff;
+    padding: 54px;
+    border-radius: 30px;
+}
+
+.text {
+    background: none;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.text h1 {
+    font-size: 30px;
+    background: none;
+    margin: 0;
+}
+
+.text h3 {
+    background: none;
+    color: #969696;
+
+    font-size: 12px;
+    padding-bottom: 42px;
+}
+
+.allInput {
+    background: none;
+
+}
+
+.allInput .inputGroup {
+    position: relative;
+    margin-bottom: 25px;
+    background: none;
+}
+
+.allInput .customInput {
+    width: 320px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+.allInput .customInput::placeholder{
+    font-size: 13px;
+    color: #ddd;
+    opacity: 1; /* Важно для Firefox */
+}
+
+.customInput:focus {
+    border: 2px solid #667eea;
+}
+
+button {
+    background: #667eea;
+    color: #ffffff;
+
+    border-radius: 40px;
+    border: none;
+    
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 16px 110px;
+}
+
+button:focus {
+    background: #ddd;
+    color: #667eea;
+    border: 1px solid #eeefef;
+}
+
+.nameLabel {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: white;
+    padding: 0 7px;
+    font-size: 13px;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.dividerClassic {
+    background: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 30px 0;
+}
+
+.dividerClassic .line {
+    background: none;
+    flex: 1;        
+    width: 180px;
+    height: 1px;
+    background-color: #ced2d4;
+}
+
+.dividerClassic .text {
+    background: none;
+    padding: 0 8px;
+    color: #a0a9aa;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+
+    background: none;
+}
+
+.footer h4 {
+    background: none;
+    color: #6C6C6C;
+
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.footer a {
+    color: #667eea;
+    background: none;
+    font-weight: bold;
+}
