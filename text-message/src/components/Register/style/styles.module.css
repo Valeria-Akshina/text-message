@@ -1,0 +1,261 @@
+* {
+    background: #eeefef;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardRegist {
+    background: #ffffff;
+    padding: 54px;
+    border-radius: 30px;
+}
+
+.text {
+    background: none;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.text h1 {
+    font-size: 30px;
+    background: none;
+    margin: 0;
+}
+
+.text h3 {
+    background: none;
+    color: #969696;
+
+    font-weight: 200;
+    font-size: 14px;
+    padding-bottom: 42px;
+}
+
+.allInput {
+    background: none;
+
+}
+
+.allInput .inputGroup {
+    position: relative;
+    margin-bottom: 25px;
+    background: none;
+}
+
+.allInput .customInput {
+    width: 320px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+.allInput .customInput::placeholder{
+    font-size: 13px;
+    color: #ddd;
+    opacity: 1; /* Важно для Firefox */
+}
+
+.customInput:focus {
+    border: 2px solid #667eea;
+}
+
+button {
+    background: #667eea;
+    color: #ffffff;
+
+    border-radius: 40px;
+    border: none;
+    
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 16px 110px;
+}
+
+button:focus {
+    background: #ddd;
+    color: #667eea;
+    border: 1px solid #eeefef;
+}
+
+.nameLabel {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: white;
+    padding: 0 7px;
+    font-size: 13px;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.dividerClassic {
+    background: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 30px 0;
+}
+
+.dividerClassic .line {
+    background: none;
+    flex: 1;        
+    width: 180px;
+    height: 1px;
+    background-color: #ced2d4;
+}
+
+.dividerClassic .text {
+    background: none;
+    padding: 0 8px;
+    color: #a0a9aa;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+
+    background: none;
+}
+
+.footer h4 {
+    background: none;
+    color: #6C6C6C;
+
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.footer a {
+    color: #667eea;
+    background: none;
+    font-weight: bold;
+}
+
+/* ===== АДАПТИВ ДЛЯ ПЛАНШЕТОВ ===== */
+@media (max-width: 1024px) {
+.cardRegist {
+    padding: 40px;
+    margin: 15px;
+    max-width: 450px;
+}
+
+.text h1 {
+    font-size: 26px;
+}
+
+.text h3 {
+    font-size: 13px;
+    padding-bottom: 35px;
+}
+
+button {
+    padding: 14px;
+    font-size: 14px;
+}
+}
+
+/* ===== АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
+@media (max-width: 768px) {
+.cardRegist {
+    padding: 30px 25px;
+    margin: 10px;
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+.text h1 {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+}
+
+.text h3 {
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.text {
+    align-items: center;
+}
+
+.allInput .customInput {
+    padding: 12px;
+    font-size: 14px;
+}
+
+button {
+    padding: 12px;
+    font-size: 14px;
+}
+
+.nameLabel {
+    font-size: 12px;
+    left: 12px;
+}
+
+.dividerClassic {
+    margin: 25px 0;
+}
+
+.footer h4 {
+    font-size: 14px;
+}
+}
+
+/* ===== АДАПТИВ ДЛЯ МАЛЕНЬКИХ МОБИЛЬНЫХ ===== */
+@media (max-width: 480px) {
+.cardRegist {
+    padding: 25px 20px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.text h1 {
+    font-size: 22px;
+}
+
+.text h3 {
+    font-size: 11px;
+    padding-bottom: 25px;
+}
+
+.allInput .customInput {
+    padding: 10px;
+    font-size: 13px;
+}
+
+button {
+    padding: 10px;
+    font-size: 13px;
+}
+
+.nameLabel {
+    font-size: 11px;
+    top: -8px;
+    left: 10px;
+}
+
+.dividerClassic {
+    margin: 20px 0;
+}
+
+.dividerClassic .text {
+    font-size: 11px;
+    padding: 0 6px;
+}
+
+.footer h4 {
+    font-size: 13px;
+}
+}

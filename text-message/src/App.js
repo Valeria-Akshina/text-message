@@ -1,13 +1,19 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Entrance } from './components/Entrance';
 import { Register } from './components/Register';
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"></link>
-
 
 function App() {
   return (
-    <div className="App">
-      <Register/>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Entrance/>} />
+          <Route path="/entrance" element={<Entrance/>} />
+          <Route path="/register" element={<Register/>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
