@@ -10,7 +10,9 @@ interface RegisterBody {
 
 const router = express.Router();
 
-router.post("/login", async function (params) {});
+router.post("/login", async function (req, res) {
+
+});
 router.post("/logout", async function (params) {});
 
 router.post(
@@ -20,7 +22,20 @@ router.post(
       const { username, email, password } = req.body;
       if (!email || !password || !username)
         throw new Error("Email or password error1");
+
       if (email) {
+        const u = prisma.user.findFirstOrThrow({
+          where: {
+            email: email
+          }
+        })
+
+      if (username) {
+        const u = prisma.user.findFirst({
+          where: { username }
+          });
+      }
+        
       } // есть ли такой пользователь в бд
       const hashedPass = await hashPass(password);
       const newUser = prisma.user.create({
