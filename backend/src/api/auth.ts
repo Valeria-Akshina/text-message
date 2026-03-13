@@ -3,47 +3,61 @@ import { hashPass } from "../utils/hashPass";
 import prisma from "../db";
 
 interface RegisterBody {
-  username?: string;
-  email?: string;
-  password?: string;
+  username: string;
+  email: string;
+  password: string;
 }
 
 const router = express.Router();
 
-router.post("/login", async function (req, res) {
-
+router.post("/login", async function (req: Request, res: Response) {
+  return res.sendStatus(200);
 });
-router.post("/logout", async function (params) {});
+
+router.post("/logout", async function (req: Request, res: Response) {
+  return res.sendStatus(200);
+});
 
 router.post(
   "/register",
   async function (req: Request<{}, {}, RegisterBody>, res: Response) {
     try {
       const { username, email, password } = req.body;
-      if (!email || !password || !username)
-        throw new Error("Email or password error1");
 
-      if (email) {
-        const u = prisma.user.findFirstOrThrow({
-          where: {
-            email: email
-          }
-        })
-
-      if (username) {
-        const u = prisma.user.findFirst({
-          where: { username }
-          });
+      if (!email || !password || !username) {
+        return res.status(400).json({ error: "Все поля обязательны" });
       }
-        
-      } // есть ли такой пользователь в бд
-      const hashedPass = await hashPass(password);
-      const newUser = prisma.user.create({
-        data: { username, email, password: hashedPass },
+
+      const existingUser = await prisma.user.findFirst({
+        where: {
+          OR: [
+            { email: email },
+            { username: username }
+          ]
+        }
       });
-      return res.status(200).json({ text: newUser });
+
+      if (existingUser) {
+        return res.status(409).json({ error: "Пользователь с таким email или именем уже существует" });
+      }
+
+      const hashedPass = await hashPass(password);
+
+      const newUser = await prisma.user.create({
+        data: { username, email, password: hashedPass },
+        select: {
+          id: true,
+          username: true,
+          email: true,
+          createAt: true
+        }
+      });
+
+      return res.status(201).json({ user: newUser });
+
     } catch (e) {
-      return res.status(400).json({ error: e });
+      console.error(e);
+      return res.status(500).json({ error: "Внутренняя ошибка сервера" });
     }
   },
 );
